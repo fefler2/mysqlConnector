@@ -5,6 +5,7 @@ public class Main {
 
 
 
+//        String url = "jdbc:mysql://localhost:3306/mydb?autoReconnect=true&useSSL=false";
         String url = "jdbc:mysql://localhost:3306/mydb?autoReconnect=true&useSSL=false";
         String user = "root"; // nazwa usera w bazie danych
         String password = "secret";
@@ -12,8 +13,13 @@ public class Main {
             Connection myConn =
                     DriverManager.getConnection(url, user, password);
             Statement myStmt = myConn.createStatement();
-            String sql;
+            String sql = "select * from mydb.customers";
             ResultSet rs = myStmt.executeQuery(sql);
+//
+//            while (rs.next()) {
+//                System.out.println(rs.getString("comment"));
+//            }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

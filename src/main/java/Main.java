@@ -6,23 +6,30 @@ public class Main {
 
 
 //        String url = "jdbc:mysql://localhost:3306/mydb?autoReconnect=true&useSSL=false";
+//        String url = "jdbc:mysql://localhost:3306/mydb?autoReconnect=true&useSSL=false";
         String url = "jdbc:mysql://localhost:3306/mydb?autoReconnect=true&useSSL=false";
         String user = "root"; // nazwa usera w bazie danych
-        String password = "secret";
+        String password = "";
+//
+//        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+//
+//        StrictMode.setThreadPolicy(policy);
+
+
         try {
-            Connection myConn =
-                    DriverManager.getConnection(url, user, password);
-            Statement myStmt = myConn.createStatement();
-            String sql = "select * from mydb.customers";
-            ResultSet rs = myStmt.executeQuery(sql);
+            Connection myConn = DriverManager.getConnection(url, user, password);
+//            Connection myConn = DriverManager.getConnection(url, user, password);
+//            Statement myStmt = myConn.createStatement();
+//            String sql = "select * from mydb.customers";
+//            ResultSet rs = myStmt.executeQuery(sql);
 //
 //            while (rs.next()) {
 //                System.out.println(rs.getString("comment"));
-//            }
-
-        } catch (SQLException e) {
+            } catch (SQLException e) {
             e.printStackTrace();
         }
+
+
 
     }
 }

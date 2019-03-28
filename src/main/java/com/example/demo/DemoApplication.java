@@ -13,6 +13,9 @@ public class DemoApplication {
         System.out.println("abc");
 
 
+        int a = 44;
+
+		System.out.println(a+" " + a + a);
 
 //		SpringApplication.run(DemoApplication.class, args);
 	}

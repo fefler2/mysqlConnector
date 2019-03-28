@@ -17,6 +17,7 @@ public class DemoApplication {
 
 		System.out.println(a+" " + a + a);
 
+
 //		SpringApplication.run(DemoApplication.class, args);
 	}
 

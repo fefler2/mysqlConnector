@@ -1,5 +1,6 @@
 package Jersey;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
@@ -21,6 +22,17 @@ public class Waluty {
             }
             String pobranyJson = webOdpowiedz.getEntity(String.class);
             System.out.println(pobranyJson);
+
+            // Uzycie Jacksona 2
+
+            ObjectMapper mapper = new ObjectMapper();
+            Kursy kurs = mapper.readValue(pobranyJson, Kursy.class);
+            System.out.println("kurs +  " +kurs);
+            System.out.println();
+            System.out.println(kurs.getCurrency());
+            System.out.println(kurs.getTable());
+            System.out.println(kurs.getCode());
+
         }
         catch (Exception e){
             e.printStackTrace();

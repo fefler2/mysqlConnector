@@ -1,56 +1,59 @@
-package Usunac;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-
-import Usunac.Car;
-class Car {
-    public Car(String s, int n) {
-        this.s = s;
-        this.n = n;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Car car = (Car) o;
-        return n == car.n &&
-                Objects.equals(s, car.s);
-    }
-
-    @Override
-    public int hashCode() {
-
-        return Objects.hash(s, n);
-    }
-
-    String s;
-    int n;
-}
-
-public class A {
-    public static void main(String[] args) {
-        System.out.println("A");
-
-        List<String> lista = new ArrayList<String>();
-        lista.add("Asia");
-        lista.add("Basia");
-        lista.add("Krzysiek");
-        lista.add("Piotrek");
-
-
-        lista.add(String.valueOf(new Car("Audi",1)));
-        lista.add(String.valueOf(new Car("Opel",3)));
-        lista.add(String.valueOf(new Car("BMW",5)));
-
-        System.out.println(lista.indexOf("Audi"));
-
-        Car car = new Car("BMW",5);
-        System.out.println(lista.indexOf(car));
-
-
-
-    }
-}
+//package Usunac;
+//
+//// A Java program to demonstrate use of Comparable
+//
+//import java.io.*;
+//import java.util.*;
+//
+//
+//// A class 'Movie' that implements Comparable
+//class Movie implements Comparable<Movie> {
+//    private double rating;
+//    private String name;
+//    private int year;
+//
+//    // Used to sort movies by year
+//    public int compareTo(Movie m) {
+//        return this.name.compareTo(m.name);
+//    }
+//
+//    // Constructor
+//    public Movie(String nm, double rt, int yr) {
+//        this.name = nm;
+//        this.rating = rt;
+//        this.year = yr;
+//    }
+//
+//    // Getter methods for accessing private data
+//    public double getRating() {
+//        return rating;
+//    }
+//
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public int getYear() {
+//        return year;
+//    }
+//}
+//
+//// Driver class
+//class Main22 {
+//    public static void main(String[] args) {
+//        ArrayList<Movie> list = new ArrayList<Movie>();
+//        list.add(new Movie("Force Awakens", 8.3, 2015));
+//        list.add(new Movie("Star Wars", 8.7, 1977));
+//        list.add(new Movie("Empire Strikes Back", 8.8, 1980));
+//        list.add(new Movie("Return of the Jedi", 8.4, 1983));
+//
+//        Collections.sort(list);
+//
+//        System.out.println("Movies after sorting : ");
+//        for (Movie movie : list) {
+//            System.out.println(movie.getName() + " " +
+//                    movie.getRating() + " " +
+//                    movie.getYear());
+//        }
+//    }
+//}
